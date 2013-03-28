@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'kamino'
+
+Kamino::CLI.start(ARGV)

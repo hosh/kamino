@@ -1,3 +1,5 @@
+require 'thor'
+
 module Kamino
   class CLI < Thor
     include Thor::Actions

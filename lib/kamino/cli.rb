@@ -1,4 +1,5 @@
 require 'thor'
+require 'kamino/config'
 
 module Kamino
   class CLI < Thor
@@ -10,9 +11,10 @@ module Kamino
 
     desc 'rails', "Makes your Rails app cloneable"
     def rails
+      say "Setting VM to hostname #{Kamino.config.default_app_name} #{Kamino.config.default_host_ip}", :yellow
       target = Dir.pwd
       template File.join('rails', 'Berksfile.erb'), File.join(target, 'Berksfile')
-      template File.join('rails', 'Vagrantfile.erb'), File.join(target, 'Vagrantfile')
+      template File.join('rails', 'Vagrantfile.erb'), File.join(target, 'Vagrantfile'), Kamino.config.options
       append_file(File.join(target, 'Gemfile')) { <<END }
 
 # Berkshelf manages your cookbooks like bundler

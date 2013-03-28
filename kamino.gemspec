@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "kamino"
 
   s.add_dependency "thor"
+  s.add_dependency "rlet"
 
   s.add_development_dependency "rspec"
 

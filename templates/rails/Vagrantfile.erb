@@ -10,7 +10,7 @@ Vagrant::Config.run do |config|
   # to skip installing and copying to Vagrant's shelf.
   # config.berkshelf.except = []
 
-  config.vm.host_name = "kamino"
+  config.vm.host_name = "<%= config[:app_name] %>"
 
   # Build this from https://github.com/opscode/bento
   config.vm.box = "ubuntu-12.04"
@@ -20,7 +20,7 @@ Vagrant::Config.run do |config|
     vm.memory_size = 512
   end
 
-  config.vm.network :hostonly, "33.33.33.120"
+  config.vm.network :hostonly, "<%= config[:host_ip] %>"
   # config.vm.network :bridged
 
   config.ssh.max_tries = 40
@@ -33,10 +33,10 @@ Vagrant::Config.run do |config|
         app: { root_dir: '/vagrant' },
         rails: {
           postgresql: {
-            development_name: 'dev-stack-rails-demo_development',
-            test_name:        'dev-stack-rails-demo_test',
-            username:         'dev-stack-rails-demo',
-            password:         ''
+            development_name: '<%= config[:development_name] %>',
+            test_name:        '<%= config[:test_name] %>',
+            username:         '<%= config[:username] %>',
+            password:         '<%= config[:password] %>'
           } # postgresql
         } # rails
       }, # dev-stack

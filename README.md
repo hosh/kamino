@@ -1,4 +1,4 @@
 kamino
 ======
 
-Warp your app in a virtual machine for development work.
+Wrap your app in a virtual machine for development work.

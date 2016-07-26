@@ -4,6 +4,7 @@ Gem::Specification.new do |s|
   s.name        = "kamino"
   s.version     = Kamino::VERSION
   s.platform    = Gem::Platform::RUBY
+  s.license     = "MIT"
   s.authors     = ["Ho-Sheng Hsiao"]
   s.email       = ["hosh@opscode.com"]
   s.homepage    = "http://github.com/hosh/kamino"
